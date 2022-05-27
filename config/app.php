@@ -58,6 +58,8 @@ return [
 
     'asset_url' => env('ASSET_URL'),
 
+    'admin_url' => '/cms/',
+
     /*
     |--------------------------------------------------------------------------
     | Application Timezone
@@ -69,7 +71,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Asia/Tehran',
 
     /*
     |--------------------------------------------------------------------------
@@ -82,7 +84,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'fa',
 
     /*
     |--------------------------------------------------------------------------
@@ -185,6 +187,10 @@ return [
         /*
          * Package Service Providers...
          */
+        App\Helpers\SettingHelper\src\SettingServiceProvider::class,
+        App\Helpers\SeoHelper\src\SeoServiceProvider::class,
+        App\Helpers\MessageHelper\src\MessengerServiceProvider::class,
+        App\Helpers\PhotoSizeHelper\src\PhotoSizeServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -194,6 +200,8 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        App\Providers\FortifyServiceProvider::class,
+        App\Providers\JetstreamServiceProvider::class,
 
     ],
 
